@@ -9,6 +9,7 @@
     <div class="page-bg">
       <div>
         <video
+          id="bgvideo"
           autoplay
           muted
           loop
@@ -16,8 +17,13 @@
           playsinline
           sizes="100vw"
           class="page-bg-img">
-          <source src="static/video/13953345_grass.mp4" type="video/mp4"/>
+          <source src="static/video/855205-hd_1920_1080_30fps.mp4" type="video/mp4"/>
         </video>
+        <script>
+          document
+            .getElementById("bgvideo")
+            .playbackRate = 0.25;
+        </script>
       </div>
     </div>
     <div class="page-area">

@@ -67,9 +67,16 @@ main {
   overflow: hidden; /* Ensures glass effect doesn't leak */
 }
 
+.page-area {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: fit-content;
+}
+
 @media only screen and (max-device-width: 736px) {
   main {
-    padding: 0;
+    padding: 1rem;
   }
 }
 
@@ -106,8 +113,12 @@ body {
 pre {
   background-color: oklch(34.41% 0.0066 48.52);
   padding: 1em;
-  border: 0;
-  font-family: Iosevka Curly Iaso, monospace;
+  border: none;
+  font-family: "Iosevka Curly", ui-monospace, SFMono-Regular, Menlo, monospace;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  position: relative;
+  z-index: 10;
 }
 
 a,
