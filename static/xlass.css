@@ -1,0 +1,211 @@
+@font-face {
+  font-family: "Podkova";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(fonts/podkova.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Iosevka Curly";
+  font-style: monospace;
+  font-display: swap;
+  src: url(fonts/iosevka-curly.woff2) format("woff2");
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(fonts/schibsted-grotesk-italic-latin-ext.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(fonts/schibsted-grotesk-italic-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(fonts/schibsted-grotesk-latin-ext.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(fonts/schibsted-grotesk-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+main {
+  font-family: "Schibsted Grotesk", sans-serif;
+  max-width: 50rem;
+  padding: 2rem;
+  margin: auto;
+  border-radius: 1rem; /* Needed for backdrop-filter clipping */
+  overflow: hidden; /* Ensures glass effect doesn't leak */
+}
+
+@media only screen and (max-device-width: 736px) {
+  main {
+    padding: 0;
+  }
+}
+
+::selection {
+  background: oklch(70.54% 0.0976 2.19);
+}
+
+body {
+  /* background-image: url("img/space-needle.webp"); */
+  background-color: oklch(24.08% 0.0049 219.67);
+  color: oklch(96.55% 0.0394 100.86);
+}
+
+.page-bg {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100vh;
+  min-height: 100lvh;
+}
+
+.page-bg-img {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  min-height: 100lvh;
+  object-fit: cover;
+  object-position: center;
+}
+
+pre {
+  background-color: oklch(34.41% 0.0066 48.52);
+  padding: 1em;
+  border: 0;
+  font-family: Iosevka Curly Iaso, monospace;
+}
+
+a,
+a:active,
+a:visited {
+  color: oklch(59.73% 0.1105 352.22);
+  background-color: oklch(27.68% 0 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 0.1rem;
+  font-family: Podkova, serif;
+}
+
+main > h1:first-of-type {
+  margin-top: 0;
+}
+
+blockquote {
+  border-left: 1px solid oklch(75.64% 0.041 82.28);
+  margin: 0.5em 10px;
+  padding: 0.5em 10px;
+}
+
+footer {
+  text-align: center;
+}
+
+.glass3d {
+  --filter-glass3d: blur(128px) brightness(0.3) saturate(2);
+  --color-glass3d: hsl(197 80% 10% / 0.2);
+  --noise-glass3d: url("img/textures/egg-shell.webp");
+
+  position: relative;
+  z-index: 4;
+  box-shadow: 0 0 0.75px hsl(205 20% 10% / 0.2),
+    0.7px 0.8px 1.2px -0.4px hsl(205 20% 10% / 0.1),
+    1.3px 1.5px 2.2px -0.8px hsl(205 20% 10% / 0.1),
+    2.3px 2.6px 3.9px -1.2px hsl(205 20% 10% / 0.1),
+    3.9px 4.4px 6.6px -1.7px hsl(205 20% 10% / 0.1),
+    6.5px 7.2px 10.9px -2.1px hsl(205 20% 10% / 0.1),
+    8px 9px 14px -2.5px hsl(205 20% 10% / 0.2);
+}
+
+.glass3d::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 3;
+
+  -webkit-backdrop-filter: var(--filter-glass3d);
+  backdrop-filter: var(--filter-glass3d);
+  background-color: var(--color-glass3d);
+  background-image: var(--noise-glass3d);
+  background-size: 100px;
+  background-repeat: repeat;
+}
+
+.glass3d::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 5;
+
+  box-shadow: inset 2px 2px 1px -3px hsl(205 20% 90% / 0.8),
+    inset 4px 4px 2px -6px hsl(205 20% 90% / 0.3),
+    inset 1.5px 1.5px 1.5px -0.75px hsl(205 20% 90% / 0.15),
+    inset 1.5px 1.5px 0.25px hsl(205 20% 90% / 0.03),
+    inset 0 0 0.25px 0.5px hsl(205 20% 90% / 0.03);
+}
+
+.glass3d > * {
+  position: relative;
+  z-index: 6;
+}
+
+@media not (prefers-reduced-transparency: reduce) {
+  .glass3d::before {
+    -webkit-backdrop-filter: var(--filter-glass3d);
+    backdrop-filter: var(--filter-glass3d);
+    background-color: var(--color-glass3d);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass3d::before {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background-color: hsl(197 80% 10% / 0.85); /* opaque version */
+  }
+}

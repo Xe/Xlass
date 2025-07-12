@@ -1,0 +1,30 @@
+{
+  "name": "@xe/xlass",
+  "version": "1.0.0",
+  "description": "Xe's take on Liquid Glass",
+  "homepage": "https://github.com/Xe/Xlass#readme",
+  "bugs": {
+    "url": "https://github.com/Xe/Xlass/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xe/Xlass.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "postcss ./static/xlass.css -o static/xlass.min.css"
+  },
+  "devDependencies": {
+    "cssnano": "^7.0.7",
+    "cssnano-preset-advanced": "^7.0.7",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1",
+    "postcss-import-url": "^7.2.0",
+    "postcss-url": "^10.1.3"
+  }
+}
